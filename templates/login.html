@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../static/css/login.css">
+    <link rel="icon" href="../static/images/favicon.ico" type="image/x-icon">
+  </head>
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+      <h2 class="active"> Sign In </h2>
+      <h2 class="inactive underlineHover"><a href="/register">Sign Up</a></h2>
+  
+      <!-- Icon -->
+      <div class="fadeIn first">
+        <img src="../static/images/userr.png" id="icon" alt="User Icon" />
+      </div>
+  
+      <!-- Login Form -->
+      <form action="/login" method="POST">
+        <input type="text" id="FirstName" class="fadeIn third" name="name" placeholder="User Name">
+        <input type="password" id="password" class="fadeIn third" name="psw" placeholder="Password">
+        <input type="submit" class="fadeIn fourth" value="Log In">
+      </form>
+      <!-- Remind Passowrd -->
+      <div id="formFooter">
+        <a class="underlineHover" href="#">Forgot Password?</a>
+      </div>
+  
+    </div>
+  </div>
+</html>

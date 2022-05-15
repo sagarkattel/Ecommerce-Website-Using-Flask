@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+    <link rel="stylesheet" href="../static/css/product.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <link rel="icon" href="../static/images/favicon.ico" type="image/x-icon">
+    <script src="../static/js/scripts.js"></script>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="inner-width">
+            <a href="/" class="logo"></a>
+            <button class="menu-toggler">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="navbar-menu">
+                <a href="/#home">Home</a>
+                <a href="/#about">Feature</a>
+                <a href="/#services">Services</a>
+                <a href="/#shop">Shop</a>
+                <a href="/#contact">Contact</a>
+                {% if session["name"] %}
+                <div class="dropdown">
+                    <a class="dropbtn" href="#">Hello, {{session["name"]}}</a>
+                    <div class="dropdown-content">
+                        <a href="/logout">Log Out</a>
+                    </div>
+                </div>
+                {% else %}
+                <a href="/register">Sign Up</a>
+                {% endif %}
+
+                <i class="fas fa-cart-plus"></i>
+            </div>
+        </div>
+    </nav>
+    <div id="display">
+        <div id="productName">
+            <h1>{{pname}}</h1>
+        </div>
+        <div>
+            <img src="{{url}}" id="productImage" />
+        </div>
+
+        <div id="productDescription">
+            <h2>Details</h2>
+            <table id="descriptionTable">
+                <tr>
+                    <td>Name</td>
+                    <td>{{pname}}</td>
+                </tr>
+                <tr>
+                    <td>Price</td>
+                    <td>Rs {{price}}</td>
+                </tr>
+                <tr>
+                    <td>Stock</td>
+                    <td>{{stock}}</td>
+                </tr>
+            </table>
+            <h2>Description</h2>
+            <p>{{pdescribe}} 
+            </p>
+            <p>
+              <button class="button button1"><a href="/delivery?prname={{pname}}">Add to Cart</a></button>
+              <button class="button button2" onclick="arko()">Home</button>
+            </p>
+        </div>
+    </div>
+    <section></section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="inner-width">
+            <div class="copyright">
+                &copy; 2022 | Created & Designed By <a href="#">Sagar, Anurag and Yohana</a>
+            </div>
+            <div class="sm">
+                <a href="https://www.facebook.com" class="fab fa-facebook-f"></a>
+                <a href="https://www.twitter.com" class="fab fa-twitter"></a>
+                <a href="https://www.instagram.com" class="fab fa-instagram"></a>
+                <a href="https://www.linkedin.com" class="fab fa-linkedin-in"></a>
+                <a href="https://www.youtube.com" class="fab fa-youtube"></a>
+            </div>
+        </div>
+    </footer>
+<script>
+  function arko(){
+    window.location.replace("/")
+  }
+</script>
+</body>
+
+
+</html>

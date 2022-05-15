@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery Address</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+    <link rel="stylesheet" href="../static/css/delivery.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <link rel="icon" href="../static/images/favicon.ico" type="image/x-icon">
+    <script src="../static/js/scripts.js"></script>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="inner-width">
+            <a href="/" class="logo"></a>
+            <button class="menu-toggler">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="navbar-menu">
+                <a href="/#home">Home</a>
+                <a href="/#about">Feature</a>
+                <a href="/#services">Services</a>
+                <a href="/#shop">Shop</a>
+                <a href="/#contact">Contact</a>
+                {% if session["name"] %}
+                <div class="dropdown">
+                    <a class="dropbtn" href="#">Hello, {{session["name"]}}</a>
+                    <div class="dropdown-content">
+                        <a href="/logout">Log Out</a>
+                    </div>
+                </div>
+                {% else %}
+                <a href="/register">Sign Up</a>
+                {% endif %}
+
+                <i class="fas fa-cart-plus"></i>
+            </div>
+        </div>
+    </nav>
+
+    <div id="display">
+        <div id="productName">
+            <h1>Delivery Address For {{prname}}</h1>
+            <form action="/congrats" method="POST">
+                <table>
+                    <tr>
+                        <td><label for="txtAddress">Address Line 1</label></td>
+                        <td><input type="text" id="txtAddress" name="address" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="txtAddress">Address Line 2</label></td>
+                        <td><input type="text" id="txtAddress" name="address" required></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="txtZipcode">Zip Code<span class="required"></span></label></td>
+                        <td><input type="text" id="txtZipcode" name="zipcode" placeholder="enter a 5-digit code"
+                                required pattern="^\d{5}$" oninvalid="this.setCustomValidity('Enter a 5-digit zipcode')"
+                                oninput="setCustomValidity('')"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="City">City</label></td>
+                        <td><input type="text" id="txtCity" name="city" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="State">State</label></td>
+                        <td><input type="text" id="txtState" name="state" required></td>
+                    </tr>
+                    <tr>
+                        <td>Country<span class="required"></span></td>
+                        <td><select id="selCountry" name="country" required>
+                                <option value="" selected>Please select...</option>
+                                <option value="AA">Nepal</option>
+                                <option value="BB">India</option>
+                                <option value="CC">Bhutan</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td>Gender<span class="required"></span></td>
+                        <td><label><input type="radio" name="gender" value="m" required>Male</label>
+                            <label><input type="radio" name="gender" value="f">Female</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="phone">Phone Number</label></td>
+                        <td><input type="text" id="txtPhone" name="phone"></td>
+                    </tr>
+                    <tr>
+                        <td><button class="button button1" type="submit">Place an Order</button></td>
+            </form>
+
+            <td><button class="button button2" onclick="arko()">Home</button></td>
+            </tr>
+            </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- </div>
+        <form action="/congrats" method="POST">
+            <label>Address Line 1:</label>
+            <input type="text" name="address1" required><br><br>
+            <label>Address Line 2:</label>
+            <input type="text" name="address2" required><br><br>
+            <label>Zipcode       :</label>
+            <input type="text" name="zipcode" required><br><br>
+            <label>City:          </label>
+            <input type="text" name="city" required><br><br>
+            <label>State:         </label>
+            <input type="text" name="state" required><br><br>
+            <label>Country:       </label>
+            <input type="text" name="country" required><br><br>
+            <label>Phone Number:  </label>
+            <input type="text" name="phone" required><br><br> -->
+
+            <!-- <p>Address Line 1: <input type="text" name="address1" required></p>
+            <p>Address Line 2: <input type="text" name="address2" required></p>
+            <p>Zipcode:       <input type="text" name="zipcode" required></p>
+            <p>City: <input type="text" name="city" required></p>
+            <p>State: <input type="text" name="state" required></p>
+            <p>Country: <input type="text" name="country" required></p>
+            <p>Phone Number: <input type="text" name="phone" required></p> -->
+            <!-- <table>
+                <tr>
+                    <td><button class="button button1" type="submit">Place an Order</button></td>
+        </form>
+
+        <td><button class="button button2" onclick="arko()">Home</button></td>
+        </tr>
+        </table>
+    </div> -->
+
+
+
+            <section></section>
+
+            <!-- Footer -->
+            <footer>
+                <div class="inner-width">
+                    <div class="copyright">
+                        &copy; 2022 | Created & Designed By <a href="#">Sagar, Anurag and Yohana</a>
+                    </div>
+                    <div class="sm">
+                        <a href="https://www.facebook.com" class="fab fa-facebook-f"></a>
+                        <a href="https://www.twitter.com" class="fab fa-twitter"></a>
+                        <a href="https://www.instagram.com" class="fab fa-instagram"></a>
+                        <a href="https://www.linkedin.com" class="fab fa-linkedin-in"></a>
+                        <a href="https://www.youtube.com" class="fab fa-youtube"></a>
+                    </div>
+                </div>
+            </footer>
+            <script>
+                function arko() {
+                    window.location.replace("/")
+                }
+            </script>
+</body>
+
+
+</html>

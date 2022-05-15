@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="../static/css/login.css">
+    <link rel="icon" href="../static/images/favicon.ico" type="image/x-icon">
+  </head>
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+      <h2 class="inactive underlineHover"><a href="/login">Sign In</a>  </h2>
+      <h2 class="active">Sign Up </h2>
+  
+      <!-- Icon -->
+      <div class="fadeIn first">
+        <img src="../static/images/userr.png" id="icon" alt="User Icon" />
+      </div>
+  
+      <!-- Login Form -->
+      <form action="/register" method="POST">
+        <input type="email" id="Email" class="fadeIn second" name="email" placeholder="Email">
+        <input type="text" id="FirstName" class="fadeIn third" name="name" placeholder="User Name">
+        <input type="password" id="password" class="fadeIn third" name="psw" placeholder="Password">
+        <input type="submit" class="fadeIn fourth" value="Log In">
+      </form>
+      <!-- Remind Passowrd -->
+      <div id="formFooter">
+        <a class="underlineHover" href="/login">Already have account?</a>
+      </div>
+  
+    </div>
+  </div>
+</html>
